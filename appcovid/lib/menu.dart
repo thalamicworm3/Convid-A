@@ -25,7 +25,62 @@ class _MenuScreenState extends State<MenuScreen> {
             Container(
               padding: const EdgeInsets.only(bottom: 8),
             ),
-            new Expanded(
+            Container(
+              margin: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(3.0),
+              child: FlatButton(
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  disabledColor: Colors.grey,
+                  disabledTextColor: Colors.black,
+                  padding: EdgeInsets.all(8.0),
+                  splashColor: Colors.blueAccent,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Cadastro()),
+                    );
+                  },
+                  child: Column(children: <Widget>[
+                    Text(
+                      "Iniciar Consulta",
+                      style: TextStyle(fontSize: 40.0),
+                    ),
+                    Icon(
+                      Icons.book,
+                      size: 50,
+                    )
+                  ])),
+            ),
+            Container(
+              margin: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(3.0),
+              child: FlatButton(
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  disabledColor: Colors.grey,
+                  disabledTextColor: Colors.black,
+                  padding: EdgeInsets.all(8.0),
+                  splashColor: Colors.blueAccent,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Cadastro()),
+                    );
+                  },
+                  child: Column(children: <Widget>[
+                    Text(
+                      "Opções",
+                      style: TextStyle(fontSize: 40.0),
+                    ),
+                    Icon(
+                      Icons.account_circle,
+                      size: 50,
+                    )
+                  ])),
+            ),
+
+            /*  new Expanded(
               child: ListView.builder(
                   itemCount: 2,
                   itemBuilder: (context, index) {
@@ -99,9 +154,9 @@ class _MenuScreenState extends State<MenuScreen> {
                           );
                         }
                         break;
-                    }
+                    } */
 
-                    /* Container(
+            /* Container(
                           margin: const EdgeInsets.all(15.0),
                           padding: const EdgeInsets.all(3.0),
                           //color: Colors.blueGrey,
@@ -128,8 +183,6 @@ class _MenuScreenState extends State<MenuScreen> {
                               );
                             },
                           )); */
-                  }),
-            )
           ],
         ));
   }
