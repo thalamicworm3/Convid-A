@@ -3,21 +3,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/menu.dart';
-import 'package:appcovid/respostatela1.dart';
+import 'package:appcovid/respostaTemCovid.dart';
 
-String opcao='Tem covid';
+String opcao = 'Tem covid';
 
 class Pergunta1 extends StatelessWidget {
   Pergunta1();
-  
+
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
+    return Scaffold(
         appBar: AppBar(
-          title: Text('MENU'),
-          backgroundColor: cor,          
+          title: Text('1ª Pergunta'),
+          backgroundColor: cor,
         ),
-        backgroundColor: Colors.grey,
         body: new Column(
           children: <Widget>[
             Container(
@@ -28,58 +27,54 @@ class Pergunta1 extends StatelessWidget {
               ),
             ),
             Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              child:MyStatefulWidget()
-            ),
+                padding: const EdgeInsets.only(bottom: 8),
+                child: MyStatefulWidget()),
             new Expanded(
-              child: ListView.builder(
-                  itemCount: 1,
-                  itemBuilder: (context, index) {
-                    if (index == 0) {
-                      return Container(
-                          margin: const EdgeInsets.all(15.0),
-                          padding: const EdgeInsets.all(3.0),
-                          //color: Colors.blueGrey,
-                          decoration: BoxDecoration(
-                              color: cor,
-                              border: Border.all(color: Colors.black)),
-                          child: ListTile(
-                            title: Text(
-                              "Enviar Resposta",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            onTap: () {
-                              if(opcao=='Tem covid'){
-                                Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Respostatela1()),
-                                );
-                                opcao='Tem covid';
-                              }else{
-                                Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MenuScreen()),
-                                );
-                                opcao='Tem covid';
-                              }                              
-                            },
-                          )
-                      );
-                    }
-                  }
-              )
-            ),
-
+                child: ListView.builder(
+                    itemCount: 1,
+                    itemBuilder: (context, index) {
+                      if (index == 0) {
+                        return Container(
+                            margin: const EdgeInsets.all(15.0),
+                            padding: const EdgeInsets.all(3.0),
+                            //color: Colors.blueGrey,
+                            decoration: BoxDecoration(
+                                color: cor,
+                                border: Border.all(color: Colors.black)),
+                            child: ListTile(
+                              title: Text(
+                                "Enviar Resposta",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                              onTap: () {
+                                if (opcao == 'Tem covid') {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Respostatela1()),
+                                  );
+                                  opcao = 'Tem covid';
+                                } else {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => MenuScreen()),
+                                  );
+                                  opcao = 'Tem covid';
+                                }
+                              },
+                            ));
+                      }
+                    })),
           ],
-        )
-        
-    );
+        ));
   }
 }
 
-enum SingingCharacter { op1, op2 ,op3}
+enum SingingCharacter { op1, op2, op3 }
 
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key key}) : super(key: key);
@@ -103,7 +98,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               setState(() {
                 _character = value;
                 print(_character);
-                opcao='Tem covid';
+                opcao = 'Tem covid';
               });
             },
           ),
@@ -117,7 +112,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               setState(() {
                 _character = value;
                 print(_character);
-                 opcao='Não tem covid';
+                opcao = 'Não tem covid';
               });
             },
           ),
@@ -131,7 +126,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               setState(() {
                 _character = value;
                 print(_character);
-                 opcao='Não sabe';
+                opcao = 'Não sabe';
               });
             },
           ),

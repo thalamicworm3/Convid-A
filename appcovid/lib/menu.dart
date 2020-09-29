@@ -1,10 +1,11 @@
+import 'package:appcovid/cadastropage.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/pergunta1.dart';
 
-Color cor = Colors.red;
+Color cor = Colors.blue;
 
 class MenuScreen extends StatefulWidget {
   @override
@@ -16,32 +17,91 @@ class _MenuScreenState extends State<MenuScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('MENU'),
+          title: Text('Convid-a'),
           backgroundColor: cor,
-          leading: GestureDetector(
-            onTap: _incrementCounter,
-            child: Icon(
-              Icons.palette, // add custom icons also
-            ),
-          ),
         ),
-        backgroundColor: Colors.grey,
         body: new Column(
           children: <Widget>[
             Container(
               padding: const EdgeInsets.only(bottom: 8),
-              child: Text(
-                "Inicio:",
-                //style: TextStyle(fontWeight: FontWeight.bold),
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-              ),
             ),
             new Expanded(
               child: ListView.builder(
                   itemCount: 2,
                   itemBuilder: (context, index) {
-                    if (index == 0) {
-                      return Container(
+                    switch (index) {
+                      /*  case 0:
+                        {}
+                        break;
+ */
+                      case 1:
+                        {
+                          return Container(
+                            margin: const EdgeInsets.all(15.0),
+                            padding: const EdgeInsets.all(3.0),
+                            child: FlatButton(
+                                color: Colors.blue,
+                                textColor: Colors.white,
+                                disabledColor: Colors.grey,
+                                disabledTextColor: Colors.black,
+                                padding: EdgeInsets.all(8.0),
+                                splashColor: Colors.blueAccent,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Cadastro()),
+                                  );
+                                },
+                                child: Column(children: <Widget>[
+                                  Text(
+                                    "Iniciar Consulta",
+                                    style: TextStyle(fontSize: 40.0),
+                                  ),
+                                  Icon(
+                                    Icons.book,
+                                    size: 50,
+                                  )
+                                ])),
+                          );
+                        }
+                        break;
+
+                      case 2:
+                        {
+                          return Container(
+                            margin: const EdgeInsets.all(15.0),
+                            padding: const EdgeInsets.all(3.0),
+                            child: FlatButton(
+                                color: Colors.blue,
+                                textColor: Colors.white,
+                                disabledColor: Colors.grey,
+                                disabledTextColor: Colors.black,
+                                padding: EdgeInsets.all(8.0),
+                                splashColor: Colors.blueAccent,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Cadastro()),
+                                  );
+                                },
+                                child: Column(children: <Widget>[
+                                  Text(
+                                    "Opções",
+                                    style: TextStyle(fontSize: 40.0),
+                                  ),
+                                  Icon(
+                                    Icons.account_circle,
+                                    size: 50,
+                                  )
+                                ])),
+                          );
+                        }
+                        break;
+                    }
+
+                    /* Container(
                           margin: const EdgeInsets.all(15.0),
                           padding: const EdgeInsets.all(3.0),
                           //color: Colors.blueGrey,
@@ -49,51 +109,32 @@ class _MenuScreenState extends State<MenuScreen> {
                               color: cor,
                               border: Border.all(color: Colors.black)),
                           child: ListTile(
+                            
                             title: Text(
                               "Entrar",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            
                             ),
+                          
                             onTap: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Pergunta1()
-                                ),
+                                    builder: (context) => Cadastro()),
                               );
                             },
-                          ));
-                    } else {
-                      if (index == 1) {
-                        return Container(
-                            margin: const EdgeInsets.all(15.0),
-                            padding: const EdgeInsets.all(3.0),
-                            //color: Colors.blueGrey,
-                            decoration: BoxDecoration(
-                                color: cor,
-                                border: Border.all(color: Colors.black)),
-                            child: ListTile(
-                              title: Text(
-                                "Opções",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    //  builder: (context) => ComidaScreen01()
-                                  ),
-                                );
-                              },
-                            ));
-                      }                      
-                    }
+                          )); */
                   }),
             )
           ],
-        )
-        );
+        ));
   }
 
+/*
   _incrementCounter() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     int counter = (prefs.getInt('counter') ?? 0) + 1;
@@ -108,8 +149,6 @@ class _MenuScreenState extends State<MenuScreen> {
 
     await prefs.setInt('counter', counter);
   }
-
+*/
 
 }
-
-
