@@ -1,9 +1,10 @@
+import 'package:appcovid/pergunta2.dart';
+import 'package:appcovid/respostatela1.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/menu.dart';
-import 'package:appcovid/respostaTemCovid.dart';
 
 String opcao = 'Tem covid';
 
@@ -20,10 +21,10 @@ class Pergunta1 extends StatelessWidget {
         body: new Column(
           children: <Widget>[
             Container(
-              padding: const EdgeInsets.only(bottom: 8),
+              padding: const EdgeInsets.all(13),
               child: Text(
                 "Teve o diagnóstico confirmado para o Covid-19:",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
             ),
             Container(
@@ -61,9 +62,9 @@ class Pergunta1 extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => MenuScreen()),
+                                        builder: (context) => Pergunta2()),
                                   );
-                                  opcao = 'Tem covid';
+                                  opcao = 'Não tem covid';
                                 }
                               },
                             ));
@@ -90,7 +91,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return Column(
       children: <Widget>[
         ListTile(
-          title: const Text('Tem covid'),
+          title: const Text('Há menos de 15 dias'),
           leading: Radio(
             value: SingingCharacter.op1,
             groupValue: _character,
@@ -104,7 +105,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
         ),
         ListTile(
-          title: const Text('Não tem covid'),
+          title: const Text('Há mais de 15 dias'),
           leading: Radio(
             value: SingingCharacter.op2,
             groupValue: _character,
@@ -118,7 +119,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
         ),
         ListTile(
-          title: const Text('Não sabe'),
+          title: const Text('Nunca teve'),
           leading: Radio(
             value: SingingCharacter.op3,
             groupValue: _character,
