@@ -117,12 +117,10 @@ class Cadastro extends StatelessWidget {
                   shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(10.0)),
                   color: Colors.blue,
-                  onPressed:  () {
+                  onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                         builder: (context) => Pergunta1()
-                      ),
+                      MaterialPageRoute(builder: (context) => Pergunta1()),
                     );
                   },
                   child: Text(
