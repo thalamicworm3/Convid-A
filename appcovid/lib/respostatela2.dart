@@ -9,60 +9,63 @@ class Respostatela2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Resposta: Covid Positivo'),
-          backgroundColor: cor,
-        ),
-        body: ListView(
-          children: <Widget>[
-            new Image.asset(
-              'assets/images/covidpositivo.jpg',
-              width: 600,
-              height: 240,
-              fit: BoxFit.cover,
+    return WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+            appBar: AppBar(
+              title: Text('Média Chance de Contaminação'),
+              backgroundColor: cor,
+              automaticallyImplyLeading: false,
             ),
-            Center(
-              child: Container(
-                margin: const EdgeInsets.only(top: 5, bottom: 25),
-                padding: const EdgeInsets.all(3.0),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15)),
+            body: ListView(
+              children: <Widget>[
+                new Image.asset(
+                  'assets/images/conviviopositivo.jpg',
+                  width: 600,
+                  height: 240,
+                  fit: BoxFit.cover,
                 ),
-                child: Text(
-                  "Você pode estar infectado pelo novo coronavírus, mesmo que não tenha nenhum sintoma. É muito importante que você use máscara sempre e mantenha o distanciamento social para sua proteção e para proteção das outras pessoas. Se apresentar algum sintoma, como tosse, falta de ar, dor de garganta e alteração do olfato ou paladar, procure atendimento médico.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                      color: Colors.white),
+                Center(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 5, bottom: 25),
+                    padding: const EdgeInsets.all(3.0),
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(15),
+                          bottomRight: Radius.circular(15)),
+                    ),
+                    child: Text(
+                      "Por ter convívio diário com alguém que foi infectado, você também pode estar com o novo coronavírus, sendo ou não sintomático. É muito importante que você use máscara sempre e mantenha o distanciamento social para sua proteção e para proteção das outras pessoas. Se apresentar algum sintoma de risco, como falta de ar e febre procure atendimento médico.",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Colors.white),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            ButtonTheme(
-              height: 50,
-              minWidth: 250,
-              buttonColor: Colors.blue,
-              child: RaisedButton(
-                shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(10.0)),
-                color: Colors.blue,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MenuScreen()),
-                  );
-                },
-                child: Text(
-                  "Finalizar Consulta",
-                  style: TextStyle(color: Colors.white, fontSize: 15),
-                ),
-              ),
-            )
-          ],
-        ));
+                ButtonTheme(
+                  height: 50,
+                  minWidth: 250,
+                  buttonColor: Colors.blue,
+                  child: RaisedButton(
+                    shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(10.0)),
+                    color: Colors.blue,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MenuScreen()),
+                      );
+                    },
+                    child: Text(
+                      "Finalizar Consulta",
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    ),
+                  ),
+                )
+              ],
+            )));
   }
 }

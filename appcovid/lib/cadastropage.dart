@@ -92,21 +92,6 @@ class Cadastro extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(bottom: 14),
               ),
-              TextFormField(
-                  keyboardType: TextInputType.text,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelStyle: TextStyle(color: Colors.grey, fontSize: 12),
-                    labelText: "Senha",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  autofocus: true,
-                  style: new TextStyle(
-                    color: Colors.black,
-                    fontFamily: "Montserrat",
-                  )),
               Padding(
                 padding: EdgeInsets.only(bottom: 14),
               ),

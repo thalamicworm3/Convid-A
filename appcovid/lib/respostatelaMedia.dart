@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/menu.dart';
 
-class Respostatela1 extends StatelessWidget {
-  Respostatela1();
+class RespostatelaMedia extends StatelessWidget {
+  RespostatelaMedia();
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +13,14 @@ class Respostatela1 extends StatelessWidget {
         onWillPop: () async => false,
         child: Scaffold(
             appBar: AppBar(
-              automaticallyImplyLeading: false,
-              title: Text('Covid Positivo'),
+              title: Text('Média Chance de Contaminação'),
               backgroundColor: cor,
+              automaticallyImplyLeading: false,
             ),
             body: ListView(
               children: <Widget>[
                 new Image.asset(
-                  'assets/images/covidpositivo.jpg',
+                  'assets/images/covidmedia.png',
                   width: 600,
                   height: 240,
                   fit: BoxFit.cover,
@@ -36,7 +36,7 @@ class Respostatela1 extends StatelessWidget {
                           bottomRight: Radius.circular(15)),
                     ),
                     child: Text(
-                      "De acordo com a resposta enviada, você ainda está infectado, devido o tempo de cura do vírus ser de em média 15 dias, por favor procure atendimento médico o mais rápido possível e evite contato, assim evitando a proliferação do vírus.",
+                      "De acordo com as respostas e sintomas selecionados, a chance de contaminação pela covid-19 é média, caso os sintomas persistirem e/ou piorarem procure um médico e mantenha afastamento social, assim diminuindo a proliferação do vírus.",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
