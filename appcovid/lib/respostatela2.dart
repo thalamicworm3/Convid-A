@@ -1,3 +1,5 @@
+import 'package:appcovid/firebase/cadastro.dart';
+import 'package:appcovid/firebase/data_cadastro.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +8,7 @@ import 'package:appcovid/menu.dart';
 import 'package:appcovid/cadastropage.dart';
 
 class Respostatela2 extends StatelessWidget {
+  final CadastroRepository repository = CadastroRepository();
   Respostatela2();
 
   @override
@@ -55,6 +58,13 @@ class Respostatela2 extends StatelessWidget {
                         borderRadius: new BorderRadius.circular(10.0)),
                     color: Colors.blue,
                     onPressed: () {
+                      Cadastro novoCadastro = Cadastro(
+                        nomep,
+                        curso: cursop,
+                        idade: idadep,
+                        email: emailp,
+                        statuscovid: "Media");
+                        repository.addSugestao(novoCadastro);
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => MenuScreen()),

@@ -5,6 +5,7 @@ String nomep;
 String cursop;
 String idadep;
 String emailp;
+String statuscovid;
 
 class CadastroScreen extends StatefulWidget {
   @override
