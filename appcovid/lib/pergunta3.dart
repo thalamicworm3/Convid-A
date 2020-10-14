@@ -1,5 +1,7 @@
 import 'package:appcovid/respostafim.dart';
+import 'package:appcovid/respostatela1.dart';
 import 'package:appcovid/respostatela3.dart';
+import 'package:appcovid/respostatelaMedia.dart';
 import 'package:flutter/material.dart';
 
 class Pergunta3 extends StatefulWidget {
@@ -97,9 +99,9 @@ class _Pergunta3State extends State<Pergunta3> {
               setState(() {
                 chkrespira = value;
                 if (chkrespira == true) {
-                  mediana = mediana + 3;
+                  mediana = mediana + 5;
                 } else {
-                  mediana = mediana - 3;
+                  mediana = mediana - 5;
                 }
               });
             },
@@ -159,17 +161,18 @@ class _Pergunta3State extends State<Pergunta3> {
                   borderRadius: new BorderRadius.circular(10.0)),
               color: Colors.blue,
               onPressed: () {
-                if (chkfebre ||
-                    chkdorgarganta ||
-                    chkdiarreia ||
-                    chkolfato ||
-                    chkpaladar ||
-                    chkdorcabeca) {
+                if (mediana >= 8) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Respostatela3()),
                   );
-                } else if (chksemsintoma) {
+                } else if (mediana >= 3) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => RespostatelaMedia()),
+                  );
+                } else {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Respostafim()),
