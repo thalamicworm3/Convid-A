@@ -1,9 +1,10 @@
+import 'package:appcovid/pergunta3.dart';
+import 'package:appcovid/respostatela2.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/menu.dart';
-import 'package:appcovid/respostaTemCovid.dart';
 
 String opcao = 'Tem covid';
 
@@ -20,10 +21,10 @@ class Pergunta2 extends StatelessWidget {
         body: new Column(
           children: <Widget>[
             Container(
-              padding: const EdgeInsets.only(bottom: 8),
+              padding: const EdgeInsets.all(13),
               child: Text(
-                "Teve contato com alguem que foi diagnosticado com COVID-19",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                "Mora ou trabalha com alguém que apresentou diagnóstico para Covid-19, nos últimos 15 dias:",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
             ),
             Container(
@@ -54,14 +55,14 @@ class Pergunta2 extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Respostatela1()),
+                                        builder: (context) => Respostatela2()),
                                   );
                                   opcao = 'Sim';
                                 } else {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => MenuScreen()),
+                                        builder: (context) => Pergunta3()),
                                   );
                                   opcao = 'Não';
                                 }
