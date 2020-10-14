@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/menu.dart';
+import 'package:appcovid/cadastropage.dart';
 
 class Respostatela2 extends StatelessWidget {
   Respostatela2();
@@ -36,7 +37,7 @@ class Respostatela2 extends StatelessWidget {
                           bottomRight: Radius.circular(15)),
                     ),
                     child: Text(
-                      "Por ter convívio diário com alguém que foi infectado, você também pode estar com o novo coronavírus, sendo ou não sintomático. É muito importante que você use máscara sempre e mantenha o distanciamento social para sua proteção e para proteção das outras pessoas. Se apresentar algum sintoma de risco, como falta de ar e febre procure atendimento médico.",
+                      "Por ter convívio diário com alguém que foi infectado, você também pode estar com o novo coronavírus, sendo ou não sintomático. É muito importante que você use máscara sempre e mantenha o distanciamento social para sua proteção e para proteção das outras pessoas. Se apresentar algum sintoma de risco, como falta de ar e febre procure atendimento médico. (Nome:$nomep | Curso:$cursop | Idade:$idadep | Email:$emailp)",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,

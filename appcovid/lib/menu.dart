@@ -38,7 +38,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Cadastro()),
+                      MaterialPageRoute(builder: (context) => CadastroScreen()),
                     );
                   },
                   child: Column(children: <Widget>[
@@ -65,7 +65,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Cadastro()),
+                      MaterialPageRoute(builder: (context) => CadastroScreen()),
                     );
                   },
                   child: Column(children: <Widget>[

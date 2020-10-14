@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/menu.dart';
+import 'package:appcovid/cadastropage.dart';
 
 class Respostatela1 extends StatelessWidget {
   Respostatela1();
@@ -36,7 +37,7 @@ class Respostatela1 extends StatelessWidget {
                           bottomRight: Radius.circular(15)),
                     ),
                     child: Text(
-                      "De acordo com a resposta enviada, você ainda está infectado, devido o tempo de cura do vírus ser de em média 15 dias, por favor procure atendimento médico o mais rápido possível e evite contato, assim evitando a proliferação do vírus.",
+                      "De acordo com a resposta enviada, você ainda está infectado, devido o tempo de cura do vírus ser de em média 15 dias, por favor procure atendimento médico o mais rápido possível e evite contato, assim evitando a proliferação do vírus. (Nome:$nomep | Curso:$cursop | Idade:$idadep | Email:$emailp)",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,

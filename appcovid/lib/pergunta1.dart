@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/menu.dart';
+import 'package:appcovid/cadastropage.dart';
 
 String opcao = 'Tem covid';
 
@@ -68,7 +69,7 @@ class Pergunta1 extends StatelessWidget {
                                 }
                               },
                             ));
-                      }else {
+                      } else {
                         if (index == 1) {
                           return Container(
                               margin: const EdgeInsets.all(15.0),

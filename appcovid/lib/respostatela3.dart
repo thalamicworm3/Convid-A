@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/menu.dart';
+import 'package:appcovid/cadastropage.dart';
 
 class Respostatela3 extends StatelessWidget {
   Respostatela3();
@@ -36,7 +37,7 @@ class Respostatela3 extends StatelessWidget {
                           bottomRight: Radius.circular(15)),
                     ),
                     child: Text(
-                      "De acordo com as respostas e sintomas selecionados, a chance de contaminação pela covid-19 é alta, procure um médico rapidamente e mantenha afastamento social, assim diminuindo a proliferação do vírus.",
+                      "De acordo com as respostas e sintomas selecionados, a chance de contaminação pela covid-19 é alta, procure um médico rapidamente e mantenha afastamento social, assim diminuindo a proliferação do vírus. (Nome:$nomep | Curso:$cursop | Idade:$idadep | Email:$emailp)",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,

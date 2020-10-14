@@ -1,8 +1,23 @@
 import 'package:appcovid/pergunta1.dart';
 import 'package:flutter/material.dart';
 
-class Cadastro extends StatelessWidget {
+String nomep;
+String cursop;
+String idadep;
+String emailp;
+
+class CadastroScreen extends StatefulWidget {
   @override
+  _CadastroScreen createState() => _CadastroScreen();
+}
+
+class _CadastroScreen extends State<CadastroScreen> {
+  @override
+  final nome = TextEditingController();
+  final curso = TextEditingController();
+  final idade = TextEditingController();
+  final email = TextEditingController();
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -25,6 +40,7 @@ class Cadastro extends StatelessWidget {
               ),
               Padding(padding: EdgeInsets.only(bottom: 25)),
               TextFormField(
+                  controller: nome,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     labelStyle: TextStyle(color: Colors.grey, fontSize: 12),
@@ -42,6 +58,7 @@ class Cadastro extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 14),
               ),
               TextFormField(
+                  controller: curso,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     labelStyle: TextStyle(color: Colors.grey, fontSize: 12),
@@ -59,6 +76,7 @@ class Cadastro extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 14),
               ),
               TextFormField(
+                  controller: idade,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     labelStyle: TextStyle(color: Colors.grey, fontSize: 12),
@@ -76,6 +94,7 @@ class Cadastro extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 14),
               ),
               TextFormField(
+                  controller: email,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     labelStyle: TextStyle(color: Colors.grey, fontSize: 12),
@@ -103,6 +122,12 @@ class Cadastro extends StatelessWidget {
                       borderRadius: new BorderRadius.circular(10.0)),
                   color: Colors.blue,
                   onPressed: () {
+                    setState(() {
+                      nomep = nome.text;
+                      cursop = curso.text;
+                      idadep = idade.text;
+                      emailp = email.text;
+                    });
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Pergunta1()),
