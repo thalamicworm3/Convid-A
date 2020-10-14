@@ -9,60 +9,63 @@ class Respostatela1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Resposta: Covid Positivo'),
-          backgroundColor: cor,
-        ),
-        body: ListView(
-          children: <Widget>[
-            new Image.asset(
-              'assets/images/covidpositivo.jpg',
-              width: 600,
-              height: 240,
-              fit: BoxFit.cover,
+    return WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+            appBar: AppBar(
+              automaticallyImplyLeading: false,
+              title: Text('Resposta: Covid Positivo'),
+              backgroundColor: cor,
             ),
-            Center(
-              child: Container(
-                margin: const EdgeInsets.only(top: 5, bottom: 25),
-                padding: const EdgeInsets.all(3.0),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15)),
+            body: ListView(
+              children: <Widget>[
+                new Image.asset(
+                  'assets/images/covidpositivo.jpg',
+                  width: 600,
+                  height: 240,
+                  fit: BoxFit.cover,
                 ),
-                child: Text(
-                  "De acordo as respostas que você enviou, há altas chances de contaminação por Covid-19, por favor procure atendimento médico o mais rápido possível e evite contato, assim evitando a proliferação do vírus.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                      color: Colors.white),
+                Center(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 5, bottom: 25),
+                    padding: const EdgeInsets.all(3.0),
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(15),
+                          bottomRight: Radius.circular(15)),
+                    ),
+                    child: Text(
+                      "De acordo as respostas que você enviou, há altas chances de contaminação por Covid-19, por favor procure atendimento médico o mais rápido possível e evite contato, assim evitando a proliferação do vírus.",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Colors.white),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            ButtonTheme(
-              height: 50,
-              minWidth: 250,
-              buttonColor: Colors.blue,
-              child: RaisedButton(
-                shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(10.0)),
-                color: Colors.blue,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MenuScreen()),
-                  );
-                },
-                child: Text(
-                  "Finalizar Consulta",
-                  style: TextStyle(color: Colors.white, fontSize: 15),
-                ),
-              ),
-            )
-          ],
-        ));
+                ButtonTheme(
+                  height: 50,
+                  minWidth: 250,
+                  buttonColor: Colors.blue,
+                  child: RaisedButton(
+                    shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(10.0)),
+                    color: Colors.blue,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MenuScreen()),
+                      );
+                    },
+                    child: Text(
+                      "Finalizar Consulta",
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    ),
+                  ),
+                )
+              ],
+            )));
   }
 }

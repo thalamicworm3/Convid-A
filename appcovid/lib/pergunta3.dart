@@ -40,7 +40,7 @@ class _Pergunta3State extends State<Pergunta3> {
             onChanged: (value) {
               setState(() {
                 chkfebre = value;
-                if (chkrespira == true) {
+                if (chkfebre == true) {
                   mediana = mediana + 3;
                 } else {
                   mediana = mediana - 3;
@@ -68,7 +68,7 @@ class _Pergunta3State extends State<Pergunta3> {
             onChanged: (value) {
               setState(() {
                 chkdorgarganta = value;
-                if (chkrespira == true) {
+                if (chkdorgarganta == true) {
                   mediana = mediana + 2;
                 } else {
                   mediana = mediana - 2;
@@ -146,6 +146,7 @@ class _Pergunta3State extends State<Pergunta3> {
                   chkolfato = false;
                   chkdiarreia = false;
                   chkdorcabeca = false;
+                  mediana = 0;
                 }
               });
             },
