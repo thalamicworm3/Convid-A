@@ -1,9 +1,11 @@
 import 'package:appcovid/cadastropage.dart';
+import 'package:appcovid/firebase/cadastro.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/pergunta1.dart';
+import 'package:appcovid/firebase/lista_de_cadastro.dart';
 
 Color cor = Colors.blue;
 
@@ -65,7 +67,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CadastroScreen()),
+                      MaterialPageRoute(builder: (context) => CadastroList()),
                     );
                   },
                   child: Column(children: <Widget>[
