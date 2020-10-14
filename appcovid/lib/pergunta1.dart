@@ -32,7 +32,7 @@ class Pergunta1 extends StatelessWidget {
                 child: MyStatefulWidget()),
             new Expanded(
                 child: ListView.builder(
-                    itemCount: 1,
+                    itemCount: 2,
                     itemBuilder: (context, index) {
                       if (index == 0) {
                         return Container(
@@ -64,10 +64,37 @@ class Pergunta1 extends StatelessWidget {
                                     MaterialPageRoute(
                                         builder: (context) => Pergunta2()),
                                   );
-                                  opcao = 'Não tem covid';
+                                  opcao = 'Tem covid';
                                 }
                               },
                             ));
+                      }else {
+                        if (index == 1) {
+                          return Container(
+                              margin: const EdgeInsets.all(15.0),
+                              padding: const EdgeInsets.all(3.0),
+                              //color: Colors.blueGrey,
+                              decoration: BoxDecoration(
+                                  color: cor,
+                                  border: Border.all(color: Colors.black)),
+                              child: ListTile(
+                                title: Text(
+                                  "Volta ao Menu",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => MenuScreen()),
+                                  );
+                                  opcao = 'Tem covid';
+                                },
+                              ));
+                        }
                       }
                     })),
           ],
