@@ -16,6 +16,7 @@ class _Pergunta3State extends State<Pergunta3> {
   bool chkdiarreia = false;
   bool chkrespira = false;
   bool chksemsintoma = false;
+  int mediana = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +40,11 @@ class _Pergunta3State extends State<Pergunta3> {
             onChanged: (value) {
               setState(() {
                 chkfebre = value;
+                if (chkrespira == true) {
+                  mediana = mediana + 3;
+                } else {
+                  mediana = mediana - 3;
+                }
               });
             },
           ),
@@ -48,6 +54,11 @@ class _Pergunta3State extends State<Pergunta3> {
             onChanged: (value) {
               setState(() {
                 chkpaladar = value;
+                if (chkpaladar == true) {
+                  mediana++;
+                } else {
+                  mediana--;
+                }
               });
             },
           ),
@@ -57,6 +68,11 @@ class _Pergunta3State extends State<Pergunta3> {
             onChanged: (value) {
               setState(() {
                 chkdorgarganta = value;
+                if (chkrespira == true) {
+                  mediana = mediana + 2;
+                } else {
+                  mediana = mediana - 2;
+                }
               });
             },
           ),
@@ -66,6 +82,11 @@ class _Pergunta3State extends State<Pergunta3> {
             onChanged: (value) {
               setState(() {
                 chkdorcabeca = value;
+                if (chkdorcabeca == true) {
+                  mediana++;
+                } else {
+                  mediana--;
+                }
               });
             },
           ),
@@ -75,6 +96,11 @@ class _Pergunta3State extends State<Pergunta3> {
             onChanged: (value) {
               setState(() {
                 chkrespira = value;
+                if (chkrespira == true) {
+                  mediana = mediana + 3;
+                } else {
+                  mediana = mediana - 3;
+                }
               });
             },
           ),
@@ -84,6 +110,11 @@ class _Pergunta3State extends State<Pergunta3> {
             onChanged: (value) {
               setState(() {
                 chkolfato = value;
+                if (chkolfato == true) {
+                  mediana++;
+                } else {
+                  mediana--;
+                }
               });
             },
           ),
@@ -93,6 +124,11 @@ class _Pergunta3State extends State<Pergunta3> {
             onChanged: (value) {
               setState(() {
                 chkdiarreia = value;
+                if (chkdiarreia == true) {
+                  mediana++;
+                } else {
+                  mediana--;
+                }
               });
             },
           ),
@@ -140,7 +176,7 @@ class _Pergunta3State extends State<Pergunta3> {
                 }
               },
               child: Text(
-                "Cadastrar",
+                "Cadastrar Mediana: $mediana",
                 style: TextStyle(color: Colors.white, fontSize: 15),
               ),
             ),
