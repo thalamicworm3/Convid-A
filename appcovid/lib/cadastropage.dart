@@ -1,6 +1,9 @@
 import 'package:appcovid/pergunta1.dart';
 import 'package:flutter/material.dart';
 
+String nome;
+
+
 class Cadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -102,11 +105,13 @@ class Cadastro extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
+                  //onChanged: (text) => widget.nome = text,
                   autofocus: true,
                   style: new TextStyle(
                     color: Colors.black,
                     fontFamily: "Montserrat",
-                  )),
+                  )
+                  ),
               Padding(
                 padding: EdgeInsets.only(bottom: 14),
               ),

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "421171664097",
+    "firebase_url": "https://convid-a.firebaseio.com",
+    "project_id": "convid-a",
+    "storage_bucket": "convid-a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421171664097:android:7cd3c640a361e6a160d3a0",
+        "android_client_info": {
+          "package_name": "com.example.appcovid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "421171664097-e60hr31aeghpiim4dbuv41papsdu4phs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_vTBtNt8oGQwLBZ0PtecYkTSb6Wpe2Ow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "421171664097-e60hr31aeghpiim4dbuv41papsdu4phs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
