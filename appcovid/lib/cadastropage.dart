@@ -111,9 +111,6 @@ class _CadastroScreen extends State<CadastroScreen> {
               Padding(
                 padding: EdgeInsets.only(bottom: 14),
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 14),
-              ),
               ButtonTheme(
                 height: 50,
                 buttonColor: Colors.blue,
