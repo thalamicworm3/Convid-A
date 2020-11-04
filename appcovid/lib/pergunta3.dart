@@ -180,7 +180,7 @@ class _Pergunta3State extends State<Pergunta3> {
                 }
               },
               child: Text(
-                "Cadastrar Mediana: $mediana",
+                "Cadastrar ",
                 style: TextStyle(color: Colors.white, fontSize: 15),
               ),
             ),

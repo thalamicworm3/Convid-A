@@ -72,7 +72,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   },
                   child: Column(children: <Widget>[
                     Text(
-                      "Opções",
+                      "     Cadastros     ",
                       style: TextStyle(fontSize: 40.0),
                     ),
                     Icon(
