@@ -47,13 +47,13 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
           TextField(
             autofocus: true,
             decoration: InputDecoration(
-                border: OutlineInputBorder(), hintText: "Email"),
+                border: OutlineInputBorder(), hintText: "Trabalho"),
             onChanged: (text) => widget.aplicativoTrabalho = text,
           ),
           TextField(
             autofocus: true,
             decoration: InputDecoration(
-                border: OutlineInputBorder(), hintText: "Email"),
+                border: OutlineInputBorder(), hintText: "Telefone"),
             onChanged: (text) => widget.aplicativoTelefone = text,
           ),
           TextField(
