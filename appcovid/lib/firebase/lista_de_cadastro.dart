@@ -23,7 +23,8 @@ class _CadastroListState extends State<CadastroList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Lista de Sugestões"),backgroundColor: cor,
+        title: Text("Lista de Sugestões"),
+        backgroundColor: cor,
         /*
         leading: GestureDetector(
           onTap: _incrementCounter,
@@ -51,7 +52,6 @@ class _CadastroListState extends State<CadastroList> {
         child: Icon(Icons.add),
       ),
     );
-  
   }
   //define a cor
   /*
@@ -89,13 +89,14 @@ class _CadastroListState extends State<CadastroList> {
                   child: Text("Cancelar")),
               FlatButton(
                   onPressed: () {
-                    Cadastro novoCadastro = Cadastro(
-                        nomep,
+                    Cadastro novoCadastro = Cadastro(nomep,
                         curso: cursop,
                         idade: idadep,
                         email: emailp,
+                        trabalho: trabalhop,
+                        telefone: telefonep,
                         statuscovid: dialogWidget.aplicativoStatuscovid);
-                        repository.addSugestao(novoCadastro);
+                    repository.addSugestao(novoCadastro);
                     Navigator.of(context).pop();
                   },
                   child: Text("Adicionar"))
@@ -120,8 +121,8 @@ class _CadastroListState extends State<CadastroList> {
       margin: const EdgeInsets.all(15.0),
       padding: const EdgeInsets.all(3.0),
       //color: Colors.blueGrey,
-      decoration: BoxDecoration(
-          color: cor, border: Border.all(color: Colors.black)),
+      decoration:
+          BoxDecoration(color: cor, border: Border.all(color: Colors.black)),
       child: InkWell(
         child: Row(
           children: <Widget>[

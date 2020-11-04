@@ -40,7 +40,7 @@ class Respostatela3 extends StatelessWidget {
                           bottomRight: Radius.circular(15)),
                     ),
                     child: Text(
-                      "De acordo com as respostas e sintomas selecionados, a chance de contaminação pela covid-19 é alta, procure um médico rapidamente e mantenha afastamento social, assim diminuindo a proliferação do vírus. (Nome:$nomep | Curso:$cursop | Idade:$idadep | Email:$emailp)",
+                      "De acordo com as respostas e sintomas selecionados, a chance de contaminação pela covid-19 é alta, procure um médico rapidamente e mantenha afastamento social, assim diminuindo a proliferação do vírus.",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -58,13 +58,14 @@ class Respostatela3 extends StatelessWidget {
                         borderRadius: new BorderRadius.circular(10.0)),
                     color: Colors.blue,
                     onPressed: () {
-                      Cadastro novoCadastro = Cadastro(
-                        nomep,
-                        curso: cursop,
-                        idade: idadep,
-                        email: emailp,
-                        statuscovid: "Alta");
-                        repository.addSugestao(novoCadastro);
+                      Cadastro novoCadastro = Cadastro(nomep,
+                          curso: cursop,
+                          idade: idadep,
+                          email: emailp,
+                          trabalho: trabalhop,
+                          telefone: telefonep,
+                          statuscovid: "Alta");
+                      repository.addSugestao(novoCadastro);
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => MenuScreen()),

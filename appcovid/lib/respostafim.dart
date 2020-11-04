@@ -40,7 +40,7 @@ class Respostafim extends StatelessWidget {
                           bottomRight: Radius.circular(15)),
                     ),
                     child: Text(
-                      "De acordo com as respostas e sintomas selecionados, a chance de contaminação pela covid-19 é baixa. Tome todos os cuidados necessários, para evitar a contaminação e a proliferação do vírus. (Nome:$nomep | Curso:$cursop | Idade:$idadep | Email:$emailp)",
+                      "De acordo com as respostas e sintomas selecionados, a chance de contaminação pela covid-19 é baixa. Tome todos os cuidados necessários, para evitar a contaminação e a proliferação do vírus.",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -58,16 +58,17 @@ class Respostafim extends StatelessWidget {
                         borderRadius: new BorderRadius.circular(10.0)),
                     color: Colors.blue,
                     onPressed: () {
-                      Cadastro novoCadastro = Cadastro(
-                        nomep,
-                        curso: cursop,
-                        idade: idadep,
-                        email: emailp,
-                        statuscovid: "Baixa");
-                        repository.addSugestao(novoCadastro);
+                      Cadastro novoCadastro = Cadastro(nomep,
+                          curso: cursop,
+                          idade: idadep,
+                          email: emailp,
+                          trabalho: trabalhop,
+                          telefone: telefonep,
+                          statuscovid: "Baixa");
+                      repository.addSugestao(novoCadastro);
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MenuScreen()),                         
+                        MaterialPageRoute(builder: (context) => MenuScreen()),
                       );
                     },
                     child: Text(

@@ -40,7 +40,7 @@ class Respostatela2 extends StatelessWidget {
                           bottomRight: Radius.circular(15)),
                     ),
                     child: Text(
-                      "Por ter convívio diário com alguém que foi infectado, você também pode estar com o novo coronavírus, sendo ou não sintomático. É muito importante que você use máscara sempre e mantenha o distanciamento social para sua proteção e para proteção das outras pessoas. Se apresentar algum sintoma de risco, como falta de ar e febre procure atendimento médico. (Nome:$nomep | Curso:$cursop | Idade:$idadep | Email:$emailp)",
+                      "Por ter convívio diário com alguém que foi infectado, você também pode estar com o novo coronavírus, sendo ou não sintomático. É muito importante que você use máscara sempre e mantenha o distanciamento social para sua proteção e para proteção das outras pessoas. Se apresentar algum sintoma de risco, como falta de ar e febre procure atendimento médico.",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -58,13 +58,14 @@ class Respostatela2 extends StatelessWidget {
                         borderRadius: new BorderRadius.circular(10.0)),
                     color: Colors.blue,
                     onPressed: () {
-                      Cadastro novoCadastro = Cadastro(
-                        nomep,
-                        curso: cursop,
-                        idade: idadep,
-                        email: emailp,
-                        statuscovid: "Media");
-                        repository.addSugestao(novoCadastro);
+                      Cadastro novoCadastro = Cadastro(nomep,
+                          curso: cursop,
+                          idade: idadep,
+                          email: emailp,
+                          trabalho: trabalhop,
+                          telefone: telefonep,
+                          statuscovid: "Media");
+                      repository.addSugestao(novoCadastro);
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => MenuScreen()),

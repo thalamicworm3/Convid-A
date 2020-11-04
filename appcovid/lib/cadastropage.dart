@@ -6,6 +6,8 @@ String cursop;
 String idadep;
 String emailp;
 String statuscovid;
+String trabalhop;
+String telefonep;
 
 class CadastroScreen extends StatefulWidget {
   @override
@@ -18,6 +20,9 @@ class _CadastroScreen extends State<CadastroScreen> {
   final curso = TextEditingController();
   final idade = TextEditingController();
   final email = TextEditingController();
+  final trabalho = TextEditingController();
+  final telefone = TextEditingController();
+  String dropdownValue = 'Escolha um Curso';
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,21 +63,32 @@ class _CadastroScreen extends State<CadastroScreen> {
               Padding(
                 padding: EdgeInsets.only(bottom: 14),
               ),
-              TextFormField(
-                  controller: curso,
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    labelStyle: TextStyle(color: Colors.grey, fontSize: 12),
-                    labelText: "Curso",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  autofocus: true,
-                  style: new TextStyle(
-                    color: Colors.black,
-                    fontFamily: "Montserrat",
-                  )),
+              DropdownButton<String>(
+                value: dropdownValue,
+                style: TextStyle(color: Colors.blue),
+                underline: Container(
+                  height: 2,
+                  color: Colors.blue,
+                ),
+                onChanged: (String newValue) {
+                  setState(() {
+                    dropdownValue = newValue;
+                  });
+                },
+                items: <String>[
+                  'Escolha um Curso',
+                  'Medicina',
+                  'Administração',
+                  'Ciência da Computação',
+                  'Enfermagem',
+                  'Engenharia'
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
               Padding(
                 padding: EdgeInsets.only(bottom: 14),
               ),
@@ -112,6 +128,42 @@ class _CadastroScreen extends State<CadastroScreen> {
               Padding(
                 padding: EdgeInsets.only(bottom: 14),
               ),
+              TextFormField(
+                  controller: trabalho,
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    labelStyle: TextStyle(color: Colors.grey, fontSize: 12),
+                    labelText: "Local de Serviço",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  autofocus: true,
+                  style: new TextStyle(
+                    color: Colors.black,
+                    fontFamily: "Montserrat",
+                  )),
+              Padding(
+                padding: EdgeInsets.only(bottom: 14),
+              ),
+              TextFormField(
+                  controller: telefone,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    labelStyle: TextStyle(color: Colors.grey, fontSize: 12),
+                    labelText: "Telefone",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  autofocus: true,
+                  style: new TextStyle(
+                    color: Colors.black,
+                    fontFamily: "Montserrat",
+                  )),
+              Padding(
+                padding: EdgeInsets.only(bottom: 14),
+              ),
               ButtonTheme(
                 height: 50,
                 buttonColor: Colors.blue,
@@ -120,11 +172,16 @@ class _CadastroScreen extends State<CadastroScreen> {
                       borderRadius: new BorderRadius.circular(10.0)),
                   color: Colors.blue,
                   onPressed: () {
+                    if (dropdownValue == "Escolha um Curso") {
+                      dropdownValue = "Não Selecionado";
+                    }
                     setState(() {
                       nomep = nome.text;
-                      cursop = curso.text;
+                      cursop = dropdownValue;
                       idadep = idade.text;
                       emailp = email.text;
+                      trabalhop = trabalho.text;
+                      telefonep = telefone.text;
                     });
                     Navigator.push(
                       context,
