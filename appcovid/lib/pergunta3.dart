@@ -27,7 +27,7 @@ class _Pergunta3State extends State<Pergunta3> {
         title: Text('3º Pergunta'),
         backgroundColor: Colors.blue,
       ),
-      body: Column(
+      body: ListView(
         children: [
           Container(
             padding: EdgeInsets.all(13),
