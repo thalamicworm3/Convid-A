@@ -1,5 +1,3 @@
-import 'package:appcovid/firebase/cadastro.dart';
-import 'package:appcovid/firebase/data_cadastro.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +8,6 @@ import 'package:appcovid/models/usuario.dart';
 import 'package:appcovid/firebase/profile.dart';
 
 class Respostafim extends StatelessWidget {
-  final CadastroRepository repository = CadastroRepository();
   Respostafim();
 
   String _nomeAtual,
@@ -27,6 +24,7 @@ class Respostafim extends StatelessWidget {
         stream: DatabaseService(uid: user.uid).userData,
         builder: (context, snapshot) {
           UserData userData = snapshot.data;
+
           return WillPopScope(
               onWillPop: () async => false,
               child: Scaffold(

@@ -1,5 +1,3 @@
-import 'package:appcovid/firebase/cadastro.dart';
-import 'package:appcovid/firebase/data_cadastro.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +8,6 @@ import 'package:appcovid/models/usuario.dart';
 import 'package:appcovid/firebase/profile.dart';
 
 class Respostatela3 extends StatelessWidget {
-  final CadastroRepository repository = CadastroRepository();
   Respostatela3();
 
   String _nomeAtual,

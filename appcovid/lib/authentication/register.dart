@@ -61,13 +61,18 @@ class _RegisterState extends State<Register> {
         backgroundColor: Colors.blue,
         elevation: 0.0,
         title: Text('Cadastro'),
+        automaticallyImplyLeading: false,
         actions: <Widget>[
           FlatButton.icon(
-              onPressed: () {
+              onPressed: () async {
                 widget.toggleView();
               },
-              icon: Icon(Icons.person),
-              label: Text('Login'))
+              icon: Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+              label: Text('Login'),
+              textColor: Colors.white),
         ],
       ),
       body: Container(
@@ -202,7 +207,6 @@ class _RegisterState extends State<Register> {
                 ),
                 DropdownButton<String>(
                   value: dropdownValue,
-                  
                   style: TextStyle(color: Colors.blue),
                   underline: Container(
                     height: 2,

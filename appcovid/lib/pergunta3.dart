@@ -1,7 +1,7 @@
 import 'package:appcovid/respostafim.dart';
 import 'package:appcovid/respostatela1.dart';
 import 'package:appcovid/respostatela3.dart';
-import 'package:appcovid/respostatelaMedia.dart';
+
 import 'package:flutter/material.dart';
 
 class Pergunta3 extends StatefulWidget {
