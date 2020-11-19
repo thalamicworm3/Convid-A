@@ -8,7 +8,6 @@ import 'package:appcovid/pergunta1.dart';
 import 'package:appcovid/firebase/lista_de_cadastro.dart';
 import 'package:appcovid/services/auth.dart';
 
-
 Color cor = Colors.blue;
 
 class MenuScreen extends StatefulWidget {
@@ -17,10 +16,8 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  
   final AuthService _auth = AuthService();
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,17 +25,13 @@ class _MenuScreenState extends State<MenuScreen> {
         appBar: AppBar(
           title: Text('Convid-a'),
           backgroundColor: cor,
-           actions: <Widget>
-          [
-            FlatButton.icon
-            (
-              onPressed: () async  
-              {
-                await _auth.signOut();
-              }, 
-              icon: Icon(Icons.person), 
-              label: Text('logout')
-            )
+          actions: <Widget>[
+            FlatButton.icon(
+                onPressed: () async {
+                  await _auth.signOut();
+                },
+                icon: Icon(Icons.person),
+                label: Text('logout'))
           ],
         ),
         body: new Column(
@@ -91,7 +84,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   },
                   child: Column(children: <Widget>[
                     Text(
-                      "     Cadastros     ",
+                      "         Perfil         ",
                       style: TextStyle(fontSize: 40.0),
                     ),
                     Icon(
