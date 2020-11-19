@@ -1,9 +1,12 @@
 import 'package:appcovid/cadastropage.dart';
+import 'package:appcovid/firebase/cadastro.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/pergunta1.dart';
+import 'package:appcovid/firebase/lista_de_cadastro.dart';
+import 'package:appcovid/services/auth.dart';
 
 Color cor = Colors.blue;
 
@@ -13,12 +16,23 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.blue[100],
         appBar: AppBar(
           title: Text('Convid-a'),
           backgroundColor: cor,
+          actions: <Widget>[
+            FlatButton.icon(
+                onPressed: () async {
+                  await _auth.signOut();
+                },
+                icon: Icon(Icons.person),
+                label: Text('logout'))
+          ],
         ),
         body: new Column(
           children: <Widget>[
@@ -38,7 +52,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CadastroScreen()),
+                      MaterialPageRoute(builder: (context) => Pergunta1()),
                     );
                   },
                   child: Column(children: <Widget>[
@@ -65,12 +79,12 @@ class _MenuScreenState extends State<MenuScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CadastroScreen()),
+                      MaterialPageRoute(builder: (context) => CadastroList()),
                     );
                   },
                   child: Column(children: <Widget>[
                     Text(
-                      "Opções",
+                      "         Perfil         ",
                       style: TextStyle(fontSize: 40.0),
                     ),
                     Icon(
