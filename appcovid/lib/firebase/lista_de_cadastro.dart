@@ -136,7 +136,7 @@ class _CadastroListState extends State<CadastroList> {
                         fontWeight: FontWeight.bold), // default text style
                     children: <TextSpan>[
                       TextSpan(
-                          text: " | Status: " + cadastro.statuscovid,
+                          text: " | Curso: " + cadastro.curso,
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),

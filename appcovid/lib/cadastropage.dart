@@ -1,5 +1,6 @@
 import 'package:appcovid/pergunta1.dart';
 import 'package:flutter/material.dart';
+import 'package:appcovid/models/usuario.dart';
 
 String nomep;
 String cursop;

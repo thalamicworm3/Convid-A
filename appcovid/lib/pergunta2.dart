@@ -14,6 +14,7 @@ class Pergunta2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.blue[100],
         appBar: AppBar(
           title: Text('2ª Pergunta'),
           backgroundColor: cor,

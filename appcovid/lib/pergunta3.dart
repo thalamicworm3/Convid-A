@@ -23,11 +23,12 @@ class _Pergunta3State extends State<Pergunta3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[100],
       appBar: AppBar(
         title: Text('3º Pergunta'),
         backgroundColor: Colors.blue,
       ),
-      body: Column(
+      body: ListView(
         children: [
           Container(
             padding: EdgeInsets.all(13),
@@ -161,16 +162,11 @@ class _Pergunta3State extends State<Pergunta3> {
                   borderRadius: new BorderRadius.circular(10.0)),
               color: Colors.blue,
               onPressed: () {
-                if (mediana >= 8) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Respostatela3()),
-                  );
-                } else if (mediana >= 3) {
+               if (mediana >= 3) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => RespostatelaMedia()),
+                        builder: (context) => Respostatela3()),
                   );
                 } else {
                   Navigator.push(
@@ -180,7 +176,7 @@ class _Pergunta3State extends State<Pergunta3> {
                 }
               },
               child: Text(
-                "Cadastrar Mediana: $mediana",
+                "Cadastrar",
                 style: TextStyle(color: Colors.white, fontSize: 15),
               ),
             ),

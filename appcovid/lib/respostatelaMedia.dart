@@ -16,6 +16,7 @@ class RespostatelaMedia extends StatelessWidget {
     return WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
+            backgroundColor: Colors.blue[100],
             appBar: AppBar(
               title: Text('Média Chance de Contaminação'),
               backgroundColor: cor,
