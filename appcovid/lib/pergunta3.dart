@@ -162,11 +162,10 @@ class _Pergunta3State extends State<Pergunta3> {
                   borderRadius: new BorderRadius.circular(10.0)),
               color: Colors.blue,
               onPressed: () {
-               if (mediana >= 3) {
+                if (mediana >= 3) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => Respostatela3()),
+                    MaterialPageRoute(builder: (context) => Respostatela3()),
                   );
                 } else {
                   Navigator.push(

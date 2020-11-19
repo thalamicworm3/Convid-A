@@ -47,7 +47,7 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
           TextField(
             autofocus: true,
             decoration: InputDecoration(
-                border: OutlineInputBorder(), hintText: "Trabalho"),
+                border: OutlineInputBorder(), hintText: "Local de Trabalho"),
             onChanged: (text) => widget.aplicativoTrabalho = text,
           ),
           TextField(
