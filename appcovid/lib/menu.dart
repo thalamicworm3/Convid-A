@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appcovid/pergunta1.dart';
+import 'package:appcovid/authentication/sign_in.dart';
 
 import 'package:appcovid/services/auth.dart';
 
@@ -30,6 +31,10 @@ class _MenuScreenState extends State<MenuScreen> {
             FlatButton.icon(
                 onPressed: () async {
                   await _auth.signOut();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignIn()),
+                  );
                 },
                 icon: Icon(
                   Icons.person,
